@@ -1,0 +1,28 @@
+Inheritance allows classes to inherit common properties from the parent class. It promotes code reusability, method overriding and abstraction.
+The word extends is used for inheritance in java.
+Types of Inheritance -
+1. Single level
+A(parent) -> B(child)
+2. Multi level
+A(parent) -> B(childOfA,parentOfC) -> C(child)
+3. Hierarchical
+A(parentForB&C) -> B(child), C(child)
+4. Multiple (not supported by Java)
+A(parent), B(parent) -> C(child)
+Example -
+class Animal{  
+    void eat() {
+        System.out.println("eating...");
+    }  
+}  
+class Dog extends Animal{  
+    void bark() {
+        System.out.println("barking...");
+    }  
+}  
+class TestInheritance{  
+    public static void main(String[] args) {  
+        Dog d=new Dog();  
+        d.bark();  
+        d.eat();  
+}}  

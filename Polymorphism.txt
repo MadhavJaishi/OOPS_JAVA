@@ -1,0 +1,51 @@
+Polymorphism is the ability to exist in many forms. You can define a single method that behaves differently for different shapes.
+
+Types of Polymorphism :-
+1.Compile-time polymorphism
+In Java, method overloading is used to achieve compile-time polymorphism. A class can have numerous methods with the same name but distinct parameter lists thanks to method overloading. The compiler uses the amount and kind of parameters provided to it during compilation to decide which method to call. This choice is made during compilation, which is why it's called "compile-time polymorphism."
+Example program for CompileTimePolymorphism -
+class Calculation {  
+    int add(int a, int b) {  
+        return a + b;  
+    }  
+    double add(double a, double b) {  
+        return a + b;  
+    }  
+}  
+public class CompileTimePolymorphism {  
+    public static void main(String[] args) {  
+        Calculation calc = new Calculation();  
+        // Compile-time polymorphism: selecting the appropriate add method based on parameter types  
+        System.out.println("Sum of integers: " + calc.add(5, 3));  
+        System.out.println("Sum of doubles: " + calc.add(2.5, 3.7));  
+    }  
+} 
+
+2.Runtime polymorphism
+Whenever an object is bound with the functionality at run time, this is known as runtime polymorphism. The runtime polymorphism can be achieved by method overriding. JVM determines the proper method to call at the runtime, not at the compile time. It is also called dynamic or late binding. Method overriding says the child class has the same method as declared in the parent class. It means if the child class provides the specific implementation of the method that has been provided by one of its parent classes then it is known as method overriding. 
+Example program for RunTimePolymorphism -
+class Animal {
+  public void animalSound() {
+    System.out.println("The animal makes a sound");
+  }
+}
+class Pig extends Animal {
+  public void animalSound() {
+    System.out.println("The pig says: wee wee");
+  }
+}
+class Dog extends Animal {
+  public void animalSound() {
+    System.out.println("The dog says: bow wow");
+  }
+}
+class Main {
+  public static void main(String[] args) {
+    Animal myAnimal = new Animal();  // Create a Animal object
+    Animal myPig = new Pig();  // Create a Pig object
+    Animal myDog = new Dog();  // Create a Dog object
+    myAnimal.animalSound();
+    myPig.animalSound();
+    myDog.animalSound();
+  }
+}

@@ -1,0 +1,1 @@
+Abstraction displays only the important information by hiding the implementation part. In java, abstract class and interfaces are used to achieve abstraction. Ex: Car, Mobile, etc.
